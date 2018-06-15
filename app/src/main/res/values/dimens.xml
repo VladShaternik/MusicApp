@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Views dimensions -->
+    <dimen name="welcome_img_height">160dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="medium_margin">16dp</dimen>
+    <dimen name="big_margin">32dp</dimen>
+    <dimen name="main_ui_height">50dp</dimen>
+    <dimen name="value_decided_by_constrain">0dp</dimen>
+    <dimen name="constrain_bias_min">0.0</dimen>
+    <dimen name="layout_weight_higher">1</dimen>
+    <dimen name="default_elevation">20dp</dimen>
+
+    <!-- Font sizes -->
+    <dimen name="default_font_size">18sp</dimen>
+    <dimen name="title_font_size">30sp</dimen>
+
+    <!-- Sizes of images -->
+    <dimen name="img_size_single_song_height">400dp</dimen>
+</resources>

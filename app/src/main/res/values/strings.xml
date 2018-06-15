@@ -1,5 +1,33 @@
 <resources>
+    <!-- Activities labels -->
     <string name="app_name">Music App</string>
+    <string name="single_song_activity_label">Now playing</string>
+    <string name="added_songs_activity_label">Added Songs</string>
 
+    <!-- Recommended music title -->
     <string name="recommended_music">Recommended for You</string>
+
+    <!-- Songs data (name of the song and authors) -->
+    <string name="song_name_0">KIDS SEE GHOSTS</string>
+    <string name="author_0">Kanye West, Kid Cudi</string>
+    <string name="song_name_1">GOOD MAN</string>
+    <string name="author_1">Ne-Yo</string>
+    <string name="song_name_2">Lost &amp; Found</string>
+    <string name="author_2">Jorjia Smith</string>
+    <string name="song_name_3">The Mountain</string>
+    <string name="author_3">Dierks Bentley</string>
+    <string name="song_name_4">so sad so sexy</string>
+    <string name="author_4">Lykke Li</string>
+    <string name="song_name_5">SUPERFLY</string>
+    <string name="author_5">Future, 21 Savage, Lil Wayne</string>
+
+    <!-- Image views descriptions -->
+    <string name="img_desc_added_songs_button">Added songs button icon</string>
+    <string name="img_desc_single_song">Picture of the song</string>
+    <string name="img_desc_volume_button">Volume button icon</string>
+    <string name="img_desc_rewind_button">Rewind button icon</string>
+    <string name="img_desc_play_button">Play button icon</string>
+    <string name="img_desc_forward_button">Forward button icon</string>
+    <string name="img_desc_add_song_button">Add song button icon</string>
+
 </resources>

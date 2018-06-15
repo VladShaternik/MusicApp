@@ -39,24 +39,24 @@
         android:layout_marginRight="@dimen/small_margin"
         android:layout_marginStart="@dimen/small_margin"
         android:layout_marginTop="@dimen/small_margin"
-        android:elevation="20dp"
         android:paddingBottom="@dimen/small_margin"
-        android:paddingTop="8dp"
+        android:elevation="@dimen/default_elevation"
+        android:paddingTop="@dimen/small_margin"
         android:src="@drawable/added_songs_icon"
         app:layout_constraintBottom_toBottomOf="@+id/button_added_songs"
         app:layout_constraintEnd_toEndOf="@+id/button_added_songs"
         app:layout_constraintStart_toStartOf="@+id/button_added_songs"
-        app:layout_constraintTop_toTopOf="@+id/button_added_songs" />
+        app:layout_constraintTop_toTopOf="@+id/button_added_songs"
+        android:contentDescription="@string/img_desc_added_songs_button" />
 
     <Button
         android:id="@+id/button_added_songs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
         android:background="@drawable/added_songs_button"
-        android:elevation="200dp"
+        android:elevation="@dimen/default_elevation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
