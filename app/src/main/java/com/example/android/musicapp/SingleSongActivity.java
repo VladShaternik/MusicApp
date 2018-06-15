@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class SingleSongActivity extends AppCompatActivity {
 
-    boolean isMuted = false;
+    boolean isPlaying = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,9 +32,8 @@ public class SingleSongActivity extends AppCompatActivity {
         songAuthors.setText(getIntent().getStringExtra("song_authors"));
 
         // Make volume button work (with changing icon and actual sound muting and back)
-        final ImageView volumeButton = findViewById(R.id.volume_button);
+        final ImageView volumeButton = findViewById(R.id.volume_b);
         final AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-        assert audioManager != null;
         if (audioManager.getStreamVolume(AudioManager.STREAM_MUSIC) == 0) {
             volumeButton.setImageResource(R.drawable.volume_mute_button);
         } else {
@@ -44,20 +43,43 @@ public class SingleSongActivity extends AppCompatActivity {
             @TargetApi(Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
-                if (isMuted) {
+                boolean isMuted;
+
+                if (audioManager.getStreamVolume(AudioManager.STREAM_MUSIC) == 0) {
+                    volumeButton.setImageResource(R.drawable.volume_mute_button);
+                    isMuted = true;
+                } else {
+                    volumeButton.setImageResource(R.drawable.volume_button);
+                    isMuted = false;
+                }
+
+                if (!isMuted) {
                     volumeButton.setImageResource(R.drawable.volume_mute_button);
                     audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_MUTE, 0);
-                    isMuted = !isMuted;
                 } else {
                     volumeButton.setImageResource(R.drawable.volume_button);
                     audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_UNMUTE, 0);
-                    isMuted = !isMuted;
                 }
             }
         });
 
+        // Make play button change icon on click
+        final ImageView playButton = findViewById(R.id.play_b);
+        playButton.setImageResource(R.drawable.play_button);
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isPlaying) {
+                    playButton.setImageResource(R.drawable.pause_button);
+                } else {
+                    playButton.setImageResource(R.drawable.play_button);
+                }
+                isPlaying = !isPlaying;
+            }
+        });
+
         // Add song to the list of added songs
-        ImageView addSongButton = findViewById(R.id.add_song_button);
+        ImageView addSongButton = findViewById(R.id.add_song_b);
         addSongButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
